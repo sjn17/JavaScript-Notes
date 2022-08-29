@@ -162,6 +162,254 @@ day1
 //     console.log(user.firstName);
 //     console.log(user.userId);
 // }
+Day 2
+//A function is a set of statements that take inputs, do some specific computation, and produces output.
+// Basically, a function is a set of statements that performs some tasks or does some computation and then return the result to the user.
+//Function Declaration
+// function PrintGM(){
+//     console.log("Good morning")
+// }
+
+// PrintGM()
+
+// function ReturnFirstCharacter(str){
+//     return str[0];
+// }
+
+// console.log(ReturnFirstCharacter("shubham"));
+
+// function Target(array,target){
+
+//     for(i=0; i< array.length; i++){
+//         if(array[i] === target){
+//             return i;
+//         }
+//     }
+//     return -1;
+
+
+// }
+// console.log(Target([1,3,3,4],3))
+
+//Function Expression
+
+// const PrintGM = function(){
+//     console.log("Good morning")
+// }
+
+// PrintGM()
+//Arrow Functions
+
+// const PrintGM = ()=>{
+//     console.log("Good morning")
+// }
+
+// PrintGM()
+
+
+// const ReturnFirstCharacter=(str)=>{
+//     return str[0];
+// }
+
+// console.log(ReturnFirstCharacter("shubham"));
+
+// const Target=(array,target) => {
+
+//     for(i=0; i< array.length; i++){
+//         if(array[i] === target){
+//             return i;
+//         }
+//     }
+//     return -1;
+
+
+// }
+// console.log(Target([1,3,3,4],3))
+//If arrow function contains only one Parameter you can remove ()
+
+//IF function returns only one line you can write is as follows
+//const ReturnFirstCharacter=str=> str[0];
+
+
+//Hoisting
+//JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code. 
+//Hoisting allows functions to be safely used in code before they are declared
+//It only work for normal function does n't work with arrow functions and function expressions
+
+// PrintGM()
+// function PrintGM(){
+//     console.log("Good morning")
+// }
+//You will get an erro while using it with arrow Functions
+// PrintGM()
+// const PrintGM = ()=>{
+//          console.log("Good morning")
+//      }
+// console.log(a)
+// var a = 2
+// console.log(a)
+
+// console.log(b) //You will get error with let or const
+// let b = 3
+
+// let a ="hell";
+// console.log(a) //Error Uncaught SyntaxError: Identifier 'a' has already been declared (at function.js:90:5)
+
+// functions inside function 
+// function app(){
+//     const myFunc = () =>{
+//         console.log("hello from myFunc")
+//     }
+    
+//     const addTwo = (num1, num2) =>{
+//         return num1 + num2;
+//     }
+
+//     const mul = (num1, num2) => num1* num2;
+
+//     console.log("inside app");
+//     myFunc();
+//     //console.log(addTwo(2,3));
+//     //console.log(mul(2,3));
+// }
+// app();
+
+//myFunc() // Cannot be called outside the main Function
+
+//Lexical Scope
+
+// A lexical scope in JavaScript means that a variable defined outside a function can be accessible inside another function defined after the variable declaration.
+//  But the opposite is not true; the variables defined inside a function will not be accessible outside that function.
+
+//Case1
+//  function myApp(){
+
+// const myVar = "value1"
+
+//  const myFunc=()=>{
+// const myVar = "value59"
+// console.log(myVar);
+// }
+
+// console.log(myVar);
+// myFunc()
+
+
+// }
+// myApp()
+
+//Case2
+// function myApp(){
+
+//     const myVar = "value1"
+    
+//      const myFunc=()=>{
+//     //const myVar = "value59"
+//     console.log(myVar); //Value is taken outside the lexical Scope
+//     }
+    
+//     console.log(myVar);
+//     myFunc()
+    
+    
+//     }
+//     myApp()
+    
+
+//Case4
+// const myVar = "value1";
+
+// function myApp(){
+    
+
+//     function myFunc(){
+//        
+//         const myFunc2 = () =>{
+//             console.log("inside myFunc", myVar);//Vakue is taken from Global Environment
+//         }
+//         myFunc2();
+//     }
+
+
+//     console.log(myVar);
+//     myFunc();
+// }
+
+// myApp()
+
+//Block Scope Vs Function Scope
+// let and const are block scope
+// var is function scope 
+
+
+// {
+//     let name = "Shubham";
+//     console.log(name)
+// }
+// console.log(name)
+
+// {
+//     var name = "Shubham";
+    
+// }
+// console.log(name)
+
+//Declaring and acessing using var
+// console.log(name)
+// {
+//     var name = "Shubham";
+    
+// }
+// console.log(name)
+
+//var is function Scope
+// function myApp(){
+//     if(true){
+//         var firstName = "rohit";
+//         console.log(firstName);
+//     }
+
+//     if(true){
+//         console.log(firstName);
+//     }
+//     console.log(firstName);
+// }
+
+
+
+//Using var
+// console.log(firstName)
+// {
+//     var firstName = "Rohit";
+// }
+// console.log(firstName)
+// {
+//     var firstName = "Sunil";
+// }
+// console.log(firstName)
+//Please see the output in browser console to see the error
+// function test(){
+
+//     if(true){
+//         let firstName = "Sunil";
+//         console.log(firstName);
+//     }
+// console.log(firstName)
+// }
+
+// test()
+
+//Var gives no error
+// function test(){
+
+//     if(true){
+//         var firstName = "Sunil";
+//         console.log(firstName);
+//     }
+// console.log(firstName)
+// }
+
+// test()
 
 // nested destructuring 
 //Use {}symbol to destructure individual object
